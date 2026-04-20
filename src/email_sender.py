@@ -13,7 +13,7 @@ from .config import gmail_address, gmail_app_password, recipient_email
 log = logging.getLogger(__name__)
 
 SMTP_HOST = "smtp.gmail.com"
-SMTP_PORT = 465  # SSL
+SMTP_PORT = 587  # STARTTLS（465 SSL は Railway でブロックされるため）
 
 
 def send(subject: str, html_body: str, *, from_display_name: str = "News Report Bot") -> None:
@@ -32,7 +32,10 @@ def send(subject: str, html_body: str, *, from_display_name: str = "News Report 
     msg.attach(MIMEText(html_body, "html", "utf-8"))
 
     log.info("SMTP 接続: %s:%d (from=%s, to=%s)", SMTP_HOST, SMTP_PORT, sender, recipient)
-    with smtplib.SMTP_SSL(SMTP_HOST, SMTP_PORT, timeout=30) as server:
+    with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=30) as server:
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
         server.login(sender, gmail_app_password())
         server.send_message(msg)
     log.info("メール送信完了: subject=%s", subject)
