@@ -136,12 +136,13 @@ def _extract_json_array(text: str) -> list[dict]:
     raise ValueError("Claude レスポンスから JSON 配列を抽出できませんでした")
 
 
-_CITE_TAG_RE = re.compile(r"<cite[^>]*>.*?</cite>|<cite[^>]*/?>", re.DOTALL | re.IGNORECASE)
-
-
 def _strip_cite_tags(text: str) -> str:
-    """Claude の web_search が挿入する <cite index="..."> タグを除去する。"""
-    return _CITE_TAG_RE.sub("", text).strip()
+    """Claude の web_search が挿入する <cite> タグを除去し、中のテキストは保持する。"""
+    # 開きタグ <cite ...> を除去
+    text = re.sub(r"<cite[^>]*>", "", text, flags=re.IGNORECASE)
+    # 閉じタグ </cite> を除去
+    text = re.sub(r"</cite>", "", text, flags=re.IGNORECASE)
+    return text.strip()
 
 
 def _to_news_item(raw: dict) -> NewsItem | None:
