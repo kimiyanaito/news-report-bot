@@ -4,3 +4,4 @@ jinja2>=3.1.4
 python-dateutil>=2.9.0
 pytz>=2024.2
 python-dotenv>=1.0.0
+# sendgrid は不要になったため削除（Resend は標準ライブラリで呼び出す）

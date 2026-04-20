@@ -18,7 +18,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # プロジェクトルートの .env を自動読み込み（なければ無視）
 # Railway 本番では環境変数が直接注入されるため影響なし
-load_dotenv(PROJECT_ROOT / ".env")
+load_dotenv(PROJECT_ROOT / ".env", override=True)
 CONFIG_DIR = PROJECT_ROOT / "config"
 TEMPLATES_DIR = PROJECT_ROOT / "templates"
 OUT_DIR = PROJECT_ROOT / "out"

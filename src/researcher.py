@@ -136,10 +136,18 @@ def _extract_json_array(text: str) -> list[dict]:
     raise ValueError("Claude レスポンスから JSON 配列を抽出できませんでした")
 
 
+_CITE_TAG_RE = re.compile(r"<cite[^>]*>.*?</cite>|<cite[^>]*/?>", re.DOTALL | re.IGNORECASE)
+
+
+def _strip_cite_tags(text: str) -> str:
+    """Claude の web_search が挿入する <cite index="..."> タグを除去する。"""
+    return _CITE_TAG_RE.sub("", text).strip()
+
+
 def _to_news_item(raw: dict) -> NewsItem | None:
     """1 要素 dict を NewsItem に変換。欠損時は None を返しスキップ。"""
-    title = str(raw.get("title", "")).strip()
-    summary = str(raw.get("summary", "")).strip()
+    title = _strip_cite_tags(str(raw.get("title", ""))).strip()
+    summary = _strip_cite_tags(str(raw.get("summary", ""))).strip()
     if not title or not summary:
         log.warning("title/summary が空の要素をスキップ: %s", raw)
         return None
@@ -213,11 +221,14 @@ def research_genre(genre: GenreConfig) -> List[NewsItem]:
 
     # web_search が使われなかった場合はリトライ
     if not _web_search_was_used(response):
+        import time as _time
+        _RETRY_WAIT_SEC = 60
         log.warning(
-            "[%s] web_search が使われませんでした（学習データで回答した可能性）。"
-            "tool_choice=any + 強化プロンプトでリトライします。",
+            "[%s] web_search が使われませんでした。%d 秒ウェイト後に tool_choice=any でリトライします。",
             genre.key,
+            _RETRY_WAIT_SEC,
         )
+        _time.sleep(_RETRY_WAIT_SEC)
         response = _call_claude(
             client,
             genre.key,
@@ -254,10 +265,14 @@ def research_genre(genre: GenreConfig) -> List[NewsItem]:
 
     # 0 件の場合は強化プロンプトでリトライ
     if not items:
+        import time as _time
+        _RETRY_WAIT_SEC = 60
         log.warning(
-            "[%s] 有効な記事が 0 件でした。強化プロンプト + tool_choice=any でリトライします。",
+            "[%s] 有効な記事が 0 件でした。%d 秒ウェイト後に tool_choice=any でリトライします。",
             genre.key,
+            _RETRY_WAIT_SEC,
         )
+        _time.sleep(_RETRY_WAIT_SEC)
         response = _call_claude(
             client,
             genre.key,

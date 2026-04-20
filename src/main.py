@@ -7,7 +7,7 @@ import sys
 from pathlib import Path
 from typing import List
 
-from . import email_sender, renderer
+from . import renderer, report_publisher, slack_notifier
 from .config import OUT_DIR, dry_run, write_preview
 from .config import load_genres
 from .models import GenreConfig, GenreReport
@@ -80,26 +80,24 @@ def run_once() -> int:
             log.info("プレビュー HTML を書き出しました: %s", path)
 
         if dry_run():
-            log.info("DRY_RUN=true のためメール送信はスキップします（subject=%s）", subject)
+            log.info("DRY_RUN=true のため GitHub Pages 公開・Slack 通知はスキップします（subject=%s）", subject)
         else:
-            email_sender.send(subject, html)
+            url = report_publisher.publish(html)
+            slack_notifier.notify(url, subject)
 
         log.info("=== news-report-bot done ===")
         return 0
 
     except Exception as e:
         log.exception("ジョブ失敗: %s", e)
-        # エラー時もエラーメールで気づけるようにする（DRY_RUN と、SMTP 設定不備は除く）
         if not dry_run():
             try:
-                err_html = (
-                    f"<h3>news-report-bot ジョブ失敗</h3>"
-                    f"<p>例外: <code>{type(e).__name__}</code></p>"
-                    f"<pre style='white-space:pre-wrap'>{e}</pre>"
+                slack_notifier.notify(
+                    "https://github.com",
+                    f"⚠️ ニュースレポート生成失敗: {type(e).__name__}: {e}",
                 )
-                email_sender.send("⚠️ ニュースレポート生成失敗", err_html)
             except Exception as inner:  # noqa: BLE001
-                log.exception("エラー通知メールの送信にも失敗: %s", inner)
+                log.exception("Slack エラー通知にも失敗: %s", inner)
         return 1
 
 
