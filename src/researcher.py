@@ -233,18 +233,45 @@ def research_genre(genre: GenreConfig) -> List[NewsItem]:
         if not _web_search_was_used(response):
             log.warning("[%s] リトライ後も web_search が使われませんでした。", genre.key)
 
-    text = _collect_text(response)
-    if not text:
-        raise RuntimeError(f"[{genre.key}] Claude からテキストが返ってきませんでした")
+    def _parse_items(resp: Any) -> list[NewsItem]:
+        """レスポンスから NewsItem リストを抽出する。"""
+        t = _collect_text(resp)
+        if not t:
+            return []
+        try:
+            raws = _extract_json_array(t)
+        except ValueError:
+            return []
+        result = []
+        for raw in raws:
+            item = _to_news_item(raw) if isinstance(raw, dict) else None
+            if item is not None:
+                result.append(item)
+        return result
 
-    raw_items = _extract_json_array(text)
-    log.info("[%s] JSON パース成功: %d 件", genre.key, len(raw_items))
+    items = _parse_items(response)
+    log.info("[%s] JSON パース成功: %d 件", genre.key, len(items))
 
-    items: list[NewsItem] = []
-    for raw in raw_items:
-        item = _to_news_item(raw) if isinstance(raw, dict) else None
-        if item is not None:
-            items.append(item)
+    # 0 件の場合は強化プロンプトでリトライ
+    if not items:
+        log.warning(
+            "[%s] 有効な記事が 0 件でした。強化プロンプト + tool_choice=any でリトライします。",
+            genre.key,
+        )
+        response = _call_claude(
+            client,
+            genre.key,
+            prompt + _RETRY_SUFFIX,
+            force_tool=True,
+        )
+        log.info(
+            "[%s] リトライ応答 (stop_reason=%s, content blocks=%d)",
+            genre.key,
+            getattr(response, "stop_reason", "?"),
+            len(getattr(response, "content", []) or []),
+        )
+        items = _parse_items(response)
+        log.info("[%s] リトライ後: %d 件", genre.key, len(items))
 
     if not items:
         raise RuntimeError(f"[{genre.key}] 有効なニュース記事が 1 件も抽出できませんでした")
