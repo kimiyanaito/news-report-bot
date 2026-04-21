@@ -2,399 +2,185 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>📰 朝のニュースレポート 2026/04/21（火）</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📰 【表示テスト】モバイル対応デザイン確認</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #f4f5f7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Yu Gothic UI', 'Meiryo', sans-serif;
+    color: #1f2937;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  .wrapper {
+    width: 100%;
+    padding: 20px 16px;
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .header {
+    padding: 24px 24px 18px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  .header-label {
+    font-size: 11px;
+    color: #9ca3af;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .header-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+  .header-date {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 4px;
+  }
+  .section {
+    padding: 20px 20px 4px;
+  }
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+    border-left: 4px solid #2563eb;
+    padding: 3px 0 3px 10px;
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  .section-count {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 400;
+  }
+  .news-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+  .news-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #111827;
+    line-height: 1.5;
+  }
+  .news-index {
+    color: #9ca3af;
+    font-weight: 400;
+    margin-right: 4px;
+  }
+  .news-summary {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #374151;
+    margin-top: 10px;
+    white-space: pre-line;
+  }
+  .sources {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .source-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    border-radius: 999px;
+    font-size: 12px;
+    text-decoration: none;
+    border: 1px solid #dbeafe;
+    white-space: nowrap;
+  }
+  .footer {
+    padding: 16px 24px 20px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: #9ca3af;
+    line-height: 1.7;
+  }
+  .footer code {
+    background: #f3f4f6;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+  }
+
+  @media (max-width: 480px) {
+    .wrapper { padding: 12px 10px; }
+    .header { padding: 18px 16px 14px; }
+    .header-title { font-size: 19px; }
+    .section { padding: 16px 12px 4px; }
+    .news-item { padding: 12px 13px; }
+    .news-title { font-size: 14px; }
+    .news-summary { font-size: 13.5px; }
+    .footer { padding: 14px 16px 18px; }
+  }
+</style>
 </head>
-<body style="margin:0;padding:0;background:#f4f5f7;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue','Hiragino Sans','Yu Gothic UI','Meiryo',sans-serif;color:#1f2937;">
-  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background:#f4f5f7;padding:24px 0;">
-    <tr>
-      <td align="center">
-        <table role="presentation" width="640" cellspacing="0" cellpadding="0" border="0" style="max-width:640px;width:100%;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
-          <!-- Header -->
-          <tr>
-            <td style="padding:28px 32px 16px 32px;border-bottom:1px solid #e5e7eb;">
-              <div style="font-size:13px;color:#6b7280;letter-spacing:.04em;">MORNING NEWS BRIEFING</div>
-              <h1 style="margin:6px 0 0 0;font-size:22px;line-height:1.35;color:#111827;">
-                📰 朝のニュースレポート
-              </h1>
-              <div style="margin-top:6px;font-size:14px;color:#374151;">2026年04月21日（火）</div>
-            </td>
-          </tr>
+<body>
+  <div class="wrapper">
+    <div class="container">
 
-          <!-- Sections -->
-          <tr>
-            <td style="padding:24px 32px 4px 32px;">
-              <h2 style="margin:0 0 16px 0;font-size:17px;line-height:1.4;color:#111827;border-left:4px solid #2563eb;padding:2px 0 2px 10px;">
-                💹 国内外の金融・マクロ経済ニュース
-                <span style="font-size:12px;color:#6b7280;font-weight:normal;">（9本）</span>
-              </h2>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">1.</span>
-                  日経平均が史上最高値を更新、5万9518円に到達——米イラン停戦期待で半導体株中心に上昇
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">2026年4月16日、日経平均株価は前日比1384円（2.38%）高の5万9518円で取引を終了し、2月27日の5万8850円を上回り最高値を更新しました。米・イラン情勢の収束期待を背景に投資家のリスク許容度が高まり、人工知能（AI）や半導体関連にマネーが集まり、4月20日には前週末比348円（0.6%）高の5万8824円まで反発しています。中東情勢の緊迫化による売り圧力が後退する中、半導体関連株への持続的な買いと、本格化する企業決算への期待が相場を支えています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.nikkei.com/article/DGXZQOUB1566TTV10C26A4000000/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    日本経済新聞
-                  </a>
-                  <a href="https://www.nikkei.com/article/DGXZQOUB200JQTQ6A420C2000000/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    日本経済新聞
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">2.</span>
-                  日銀4月会合での利上げ観測が大幅に後退——中東情勢と原油高で市場の織り込み度が40%以下に低下
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">日銀が27～28日に開く金融政策決定会合で利上げを決めるとの観測がすっかり薄れており、翌日物金利スワップ（OIS）市場での利上げの織り込み度合いが一時期の7割程度から17日時点では大幅に低下しました。オーバーナイト・インデックス・スワップ（OIS）から算出した日銀による今月の利上げ確率は前週末の55％前後から40％以下に低下しています。日銀は27、28日の会合で四半期に一度の経済・物価情勢の展望（展望リポート）を議論し、中東情勢の影響が直ちに収束することは見込みづらく、2026年度は大きめの上方修正が検討される方向です。植田日銀総裁は4月17日に「原油高、『政策対応難しい』＝物価・景気にリスク」と述べ、慎重姿勢を示しています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.nikkei.com/article/DGXZQOFL170F5TX10C26A4000000/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    日本経済新聞
-                  </a>
-                  <a href="https://www.bloomberg.com/jp/news/articles/2026-04-14/TD9ABGKJH6VC00" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Bloomberg
-                  </a>
-                  <a href="https://equity.jiji.com/monetary_policy_schedules" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    時事通信
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">3.</span>
-                  ドル円が159円台で推移、円安圧力が継続——実質金利のマイナスと為替介入警戒で神経質な展開
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">片山財務相や三村財務官の円安けん制発言を受けて158.27円前後まで下落する場面も見られたが、原油価格の高止まりを意識した円先安観は根強く反発し、一時159.31円前後まで上昇しました。日本の政策金利は0.75%だが、賃金ベースのインフレ率は3.7%で、実質金利はマイナス約3%となり、円を持っているだけで年間3%ずつ価値が目減りする計算となっています。仮に米国とイランが停戦で合意しても原油価格が急速かつ大幅に値下がりすることは考えにくく、日本の交易条件悪化は避けられないとの見方が強く、日銀の利上げ期待が後退したことも円の重しとなっています。市場では160円手前で政府・日銀による為替介入への警戒感が高まるため、158円台～159円台を中心とした値動きが続いています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.gaitame.com/media/entry/2026/04/17/082942" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    外為どっとコム
-                  </a>
-                  <a href="https://www.gaitame.com/media/entry/2026/04/14/083448" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    外為どっとコム
-                  </a>
-                  <a href="https://www.gaitame.com/media/entry/2026/04/14/120000" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    外為どっとコム
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">4.</span>
-                  FRBが3月FOMCで政策金利を据え置き、年内利下げは1～2回にとどまる見通し
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">米国連邦準備制度理事会（FRB）は3月17～18日にFOMCを開催し、政策金利のフェデラル・ファンド（FF）金利の誘導目標を3.50～3.75％に維持することを決定し、2会合連続の据え置きとなりました。中東情勢の緊迫化を受けてインフレ加速懸念が強まり、一時的には利上げ観測も浮上したが、市場では年内は据え置きが中心との見方が広がっており、利下げが実施された場合でも1回程度にとどまる可能性が高いとされています。FRBは「高金利を長く維持する」方針を軸に据えつつも、足元ではインフレと雇用のバランスを見極める難しい局面にあり、関税由来のインフレが剥落するとともに、住居費の伸びも低下し、それ以外のサービスの伸びも低下するといったFRBの想定するシナリオが着実に進展しない場合には、利下げ再開は難しいとの見解が示されています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.jetro.go.jp/biznews/2026/03/df75ca68d5a7da27.html" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    ジェトロ
-                  </a>
-                  <a href="https://www.zaikei.co.jp/article/20260411/850100.html" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    財経新聞
-                  </a>
-                  <a href="https://equity.jiji.com/monetary_policy_schedules" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    時事通信
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">5.</span>
-                  米国・イラン停戦協議が難航、原油価格が1バレル100ドル超で高止まり——再協議の行方に市場が注目
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">週末の11日から12日にパキスタンの首都イスラマバードで行われた米国とイランの終戦に向けた協議は合意に至らず終了し、トランプ米大統領は「米国海軍がホルムズ海峡に出入りしようとするすべての船舶を封鎖する」意向を自身のSNSで公表しました。中東情勢の緊迫化を受けてNY原油先物（WTI）価格が一時1バレル=105ドル台へ急伸しましたが、トランプ米大統領は「イランと合意に至る見通しは非常に良好で、良い合意になるだろう」と発言し、米国とイランの停戦延長に向けた協議は今週末に開催される可能性があると述べています。4月6日時点でパキスタンが米国に対し2週間の期限延長を求め、原油価格は約112ドルまで下落する場面もありましたが、原油高の長期化懸念は依然として強く、市場は引き続きヘッドラインに振らされる展開が続いています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.gaitame.com/media/entry/2026/04/14/083448" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    外為どっとコム
-                  </a>
-                  <a href="https://www.gaitame.com/media/entry/2026/04/17/082942" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    外為どっとコム
-                  </a>
-                  <a href="https://www.bloomberg.com/news/articles/2026-04-06/stock-market-today-dow-s-p-live-updates" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Bloomberg
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">6.</span>
-                  個人向け国債金利が上昇、変動10年が1.55%・固定5年が1.79%に——日銀利上げと市場金利上昇を反映
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">2026年4月発行分の個人向け国債は、変動10年が年1.55％、固定5年が年1.79％、固定3年が年1.51％となり、過去数年で最も高い水準に達しています。日銀の政策変更により、国債利回りは3年約1.5％台・10年約2.3％台と、ここ数年で大きく上昇しており、日銀の追加利上げやインフレの継続により市場金利が上昇した場合、変動10年は半年ごとに利率が見直されるため、将来の金利上昇を取り込みやすい構造となっています。金融機関の定期預金金利も連動して上昇しており、個人の資産運用環境は大きく変化しています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://kabukiso.com/bond/japan/kojinmukekokusai_interest_rate_trends.html" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    個人向け国債情報サイト
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">7.</span>
-                  住宅ローン金利が上昇、変動金利は日銀利上げを反映し0.25%引き上げ——フラット35は史上最高値を更新
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">2026年4月現在、住宅ローン金利は変動・固定ともに上昇傾向が続いており、2025年12月に日銀が政策金利の追加利上げをした影響を受け、多くの金融機関では2026年春に基準金利が0.25％引き上げられました。PayPay銀行やUI銀行などが前月から0.25%引き上げ、日銀の利上げ分を適用している一方で、SBI新生銀行やイオン銀行は金利を据え置いており、フラット35は前月比+0.24%の2.490%となり、史上最高値を更新しました。今回の利上げは2025年12月に決定されたため、次の基準日である2026年4月1日を経て、2026年7月返済分から金利が反映されるケースが多いとみられています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.sumai-surfin.com/columns/mansion-knowledge/mortgage1" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    住まいサーフィン
-                  </a>
-                  <a href="https://0systems.com/interest-rate-table/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    0systems.com
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">8.</span>
-                  TSMC（台湾積体電路製造）が2026年見通しを上方修正——中東紛争の影響にもかかわらずAI需要が堅調
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">台湾積体電路製造（TSMC）は2026年の売上高見通しを引き上げ、中東紛争による経済的影響の懸念にもかかわらずAIチップ需要の回復力を強調する前向きな予測を発表しました。半導体業界最大手のTSMCの業績上方修正は、世界的な地政学リスクが高まる中でも、AI関連需要が引き続き堅調であることを示しており、日本の半導体関連株にも好影響を与えています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.bloomberg.com/news/articles/2026-04-16/tsmc-s-profit-beats-estimates-after-war-failed-to-dent-ai-demand" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Bloomberg
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">9.</span>
-                  野村證券が日銀の利上げシナリオを修正、2026年に2回・2027年に1回を新メインシナリオに設定
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">野村證券は金融政策の想定シナリオを変更し、新たなメインシナリオでは、日銀が2026年6月、同年12月、2027年6月に0.25％ポイントずつ利上げし、ターミナルレート（利上げの終着点における政策金利の水準）は中立金利の推計レンジ下限（1.00％）をやや上回る1.50％になると予想しています。円安が続く、あるいは一段と進む場合には、リスクシナリオとして、日銀が2026年4月、同年10月、2027年4月、同年10月に0.25％ずつ利上げし、ターミナルレートは1.75％になるとしています。展望レポートは2％程度のインフレ見通しへの自信が従来より強まっていることを示しており、円安への対応という意味合いが今後の利上げで増すとみられています。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.nomura.co.jp/wealthstyle/article/0571/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    野村證券
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:24px 32px 4px 32px;">
-              <h2 style="margin:0 0 16px 0;font-size:17px;line-height:1.4;color:#111827;border-left:4px solid #2563eb;padding:2px 0 2px 10px;">
-                🌐 国際政治関連ニュース
-                <span style="font-size:12px;color:#6b7280;font-weight:normal;">（9本）</span>
-              </h2>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">1.</span>
-                  米イラン停戦期限迫る中、ホルムズ海峡めぐり緊張再燃―米海軍がイラン船舶に発砲
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">トランプ米大統領は4月20日、米駆逐艦がイラン船籍貨物船Touskaに対し発砲したと発表。2週間の停戦期限を4月23日に控える中、ホルムズ海峡の通行をめぐり米イラン間で緊張が高まっている。イランは米国の停戦違反を非難し海峡の再封鎖を示唆。3月中旬からパキスタン仲介による和平交渉が続けられているが、レバノン情勢やイランの核開発問題をめぐり進展は困難な状況。中国外務省は「懸念」を表明し自制を求めた。専門家は双方とも戦争の長期化を望んでいないと分析するが、予断を許さない状況が続いている。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.scmp.com/news/china/diplomacy/article/3350738/what-does-us-and-irans-fight-talk-dynamic-mean-their-ceasefire-expires" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    South China Morning Post
-                  </a>
-                  <a href="https://www.nbcnews.com/middle-east-conflict" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    NBC News
-                  </a>
-                  <a href="https://www.npr.org/sections/world/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    NPR
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">2.</span>
-                  ウクライナ戦争続く―ロシアが4月に入り領土拡大停滞、ウクライナは石油施設への攻撃強化
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">4月19-20日の戦況報告によると、ウクライナは過去24時間で150件以上の戦闘を記録し、ロシア軍の死傷者は1日あたり1,000人超に達した。ISWのデータ分析によれば、ロシアは3月中旬から4月中旬にかけて占領地をほとんど拡大できず、4月7-14日には逆に13平方マイルを失った。一方、ウクライナはクリミア半島セバストポリ湾でロシア揚陸艦2隻への攻撃に成功したと発表。南部トゥアプセの製油所など、ロシアの石油インフラへのドローン攻撃を継続しており、ロシアの石油精製能力の約20%が損傷を受けている。米国仲介の和平交渉は米イラン戦争の影響で停滞している。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.aljazeera.com/news/2026/4/20/kyiv-claims-to-hit-russian-landing-ships-as-both-sides-trade-deadly-attacks" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Al Jazeera
-                  </a>
-                  <a href="https://empr.media/news/war/russia-ukraine-war-updates-key-developments-as-of-april-20-2026/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    EMPR.media
-                  </a>
-                  <a href="https://www.russiamatters.org/news/russia-ukraine-war-report-card/russia-ukraine-war-report-card-april-15-2026" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Russia Matters
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">3.</span>
-                  トランプ大統領の訪中延期、5-6週間後に―米中首脳会談で「歴史的」合意目指す
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">トランプ米大統領は4月18日、当初3月末に予定していた訪中を5-6週間後(5月下旬から6月初旬)に延期すると発表。米イラン戦争の影響で訪問が遅れていたが、トランプ氏はSNSで習近平主席との会談が「特別で潜在的に歴史的」になると期待を表明した。中国外務省報道官は「元首外交が不可欠な役割を果たす」と応じ、両国は引き続き調整を続けるとした。専門家は、この首脳会談が2026年11月の中間選挙から2029年のトランプ任期終了まで、米中関係に中期的安定をもたらせるかが焦点だと指摘。貿易のみならず安全保障分野での重要な合意の可能性に注目が集まっている。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.scmp.com/news/china/diplomacy/article/3350555/donald-trump-predicts-meeting-xi-jinping-will-be-special-ahead-china-visit" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    South China Morning Post
-                  </a>
-                  <a href="https://www.globaltimes.cn/china/diplomacy/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Global Times
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">4.</span>
-                  ハンガリー・オルバン首相が選挙で歴史的敗北―野党が圧倒的多数獲得、欧州統合への影響に注目
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">4月10日に実施されたハンガリー議会選挙で、16年間政権を率いたヴィクトル・オルバン首相率いる与党が歴史的敗北を喫し、野党ペーテル・マジャール率いる連合が議会の絶対多数を獲得した。CFRやForeign Policyは、この政権交代がハンガリーの16年にわたる非自由主義体制を巻き戻し、NATO・EU統合において重要な役割を果たす機会になると分析。米国民主党にとっても教訓となる一方、トランプ政権の同盟国への警告ともなる結果だと評価されている。新政権の対ロシア・対EU政策の転換が欧州の地政学的バランスに与える影響が注目される。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.cfr.org/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Council on Foreign Relations
-                  </a>
-                  <a href="https://foreignpolicy.com/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Foreign Policy
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">5.</span>
-                  NATO代表団30カ国が日本訪問―対中懸念とトランプ政権への不安背景に安保協力深化協議
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">4月第3週、NATO加盟32カ国中30カ国という異例の規模の代表団が日本を訪問し、安全保障協力の深化について協議を実施。横須賀海軍基地の視察や日本政府高官との会談が行われた。日本メディアによれば、NATO側はトランプ政権の同盟コミットメントへの信頼性に懸念を抱く中、日本のトランプ政権対応の経験から学ぶことにも関心を示した。この訪問は、インド太平洋地域における中国の台頭と米国の同盟政策の不確実性という二重の懸念を背景に、欧州とアジアの安全保障協力を強化する動きとして注目されている。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.worldpoliticsreview.com/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    World Politics Review
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">6.</span>
-                  ラブロフ露外相が訪中、中露が「西側の覇権阻止」で連携確認―4月15日会談
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">ロシアのセルゲイ・ラブロフ外相が4月15日に中国を訪問し、北京で会談を実施。会談後の声明で、ロシアと中国は「西側による覇権の維持・更新の試みを確実に失敗させることに関心がある」との立場を確認した。この訪問は、米イラン戦争や欧州でのNATO活動拡大という国際情勢の転換点において、中露両国が戦略的連携を一層強化する意向を示したものと受け止められている。英国防相ジョン・ヒーリーの重要発表と同日に行われたことも象徴的で、グローバルな勢力均衡の再編が進行中であることを示している。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://nato.news-pravda.com/world/2026/04/15/100217.html" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Pravda NATO (ロシア外務省声明)
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">7.</span>
-                  G7外相が対イラン非難声明発表―「無謀な攻撃」と批判、6月エヴィアン首脳会議へ向け調整
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">G7外相は3月22日、イラン湾岸地域での攻撃を「不当かつ無謀」と非難する共同声明を発表。フランスが2026年のG7議長国を務め、6月15-17日にエヴィアン・レ・バンで首脳会議が開催される予定。この会議はエマニュエル・マクロン仏大統領の最後のG7サミットとなる見込みで、ウクライナ支援、対ロシア制裁、トランプ政権の関税政策、経済安全保障、気候変動などが主要議題となる。マクロン大統領は2月、習近平国家主席やモディ印首相、ルラ・ブラジル大統領の招待を表明しており、中国の参加に日本が懸念を示すなど、G7の枠組みをめぐる議論も注目されている。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://en.wikipedia.org/wiki/52nd_G7_summit" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Wikipedia (G7)
-                  </a>
-                  <a href="https://focus2030.org/en/g7-france-2026-focus-on-development-issues-understanding-the-challenges-keeping-up-with-the-latest-news/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Focus 2030
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">8.</span>
-                  IMF報告「防衛費増加が経済に困難なトレードオフもたらす」―地政学リスクが世界経済の影」
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">IMFは2026年4月版「世界経済見通し」で、各国の軍事費急増が短期的には経済活動を押し上げる可能性がある一方、資源配分の歪みや重大なマクロ経済的トレードオフを伴うと警告した。報告書は「地政学リスクが世界経済に影を落とす」と題され、地政学的緊張の高まりが世界経済の不確実性を増幅させていると分析。紛争が勃発すれば、人的被害や物理的資本の破壊による直接損失が他の影響を圧倒する可能性があると指摘。防衛費増強をめぐる「大砲かバターか」の選択が各国に迫られている現状を浮き彫りにした。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.imf.org/-/media/files/publications/weo/2026/april/english/ch1.pdf" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    IMF
-                  </a>
-                  <a href="https://www.cnbc.com/world-politics/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    CNBC
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:0 32px 20px 32px;">
-              <div style="border:1px solid #e5e7eb;border-radius:10px;padding:16px 18px;">
-                <div style="font-size:15.5px;font-weight:600;color:#111827;line-height:1.45;">
-                  <span style="display:inline-block;min-width:22px;color:#6b7280;font-weight:500;">9.</span>
-                  イスラエル・レバノン停戦交渉、ワシントンで第2回会合へ―米イラン戦争の影響で中東情勢複雑化
-                </div>
-                <div style="margin-top:10px;font-size:14px;line-height:1.75;color:#374151;white-space:pre-line;">イスラエルとレバノンの高官級会談の第2回会合が4月24日にワシントンで開催される予定。トランプ大統領は4月16日、イスラエルとレバノンの首脳が数十年ぶりとなる対話を行うと発表していた。しかし米イラン戦争の影響で、イスラエルによるレバノン南部への地上作戦が継続。イスラエルは「イランとの停戦にレバノンは含まれない」と主張する一方、テヘラン側はヒズボラ撤退を停戦の条件に含めると主張し、立場の隔たりが大きい。国連の調停努力も続けられているが、ホルムズ海峡情勢とレバノン問題の連動により、中東全体の安定化への道筋は不透明な状況が続いている。</div>
-                <div style="margin-top:12px;font-size:0;">
-                  <a href="https://www.timesofisrael.com/" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    Times of Israel
-                  </a>
-                  <a href="https://www.nbcnews.com/middle-east-conflict" style="display:inline-block;margin:4px 6px 0 0;padding:4px 10px;background:#eff6ff;color:#1d4ed8;border-radius:999px;font-size:12px;text-decoration:none;border:1px solid #dbeafe;">
-                    NBC News
-                  </a>
-                </div>
-              </div>
-            </td>
-          </tr>
+      <!-- ヘッダー -->
+      <div class="header">
+        <div class="header-label">MORNING NEWS BRIEFING</div>
+        <div class="header-title">📰 朝のニュースレポート</div>
+        <div class="header-date">2026年04月21日（火）</div>
+      </div>
 
-          <!-- Footer -->
-          <tr>
-            <td style="padding:16px 32px 24px 32px;border-top:1px solid #e5e7eb;">
-              <div style="font-size:12px;color:#6b7280;line-height:1.6;">
-                Generated at 2026-04-21 06:04 JST &nbsp;/&nbsp; model: <code style="background:#f3f4f6;padding:1px 6px;border-radius:4px;">claude-sonnet-4-5</code><br>
-                本メールは news-report-bot により自動配信されています。
-              </div>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+      <!-- セクション -->
+      <div class="section">
+        <div class="section-title">
+          💹 国内外の金融・マクロ経済ニュース
+          <span class="section-count">（1本）</span>
+        </div>
+        <div class="news-item">
+          <div class="news-title">
+            <span class="news-index">1.</span>【表示テスト】モバイル対応デザインの確認
+          </div>
+          <div class="news-summary">これはスマートフォンでの表示を確認するためのテストページです。文字サイズ・余白・レイアウトがモバイルで適切に表示されていれば成功です。</div>
+          <div class="sources">
+            <a href="https://example.com" class="source-badge">テスト</a>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-title">
+          🌐 国際政治関連ニュース
+          <span class="section-count">（1本）</span>
+        </div>
+        <div class="news-item">
+          <div class="news-title">
+            <span class="news-index">1.</span>【表示テスト】レスポンシブ対応レイアウト
+          </div>
+          <div class="news-summary">画面幅に合わせて自動的にレイアウトが調整されます。次回 6:00 JST の自動実行から実際のニュースがこのデザインで配信されます。</div>
+          <div class="sources">
+            <a href="https://example.com" class="source-badge">テスト</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- フッター -->
+      <div class="footer">
+        Generated at 2026-04-21 12:37 JST&nbsp;/&nbsp;model: <code>claude-sonnet-4-5</code><br>
+        本レポートは news-report-bot により自動生成されています。
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
