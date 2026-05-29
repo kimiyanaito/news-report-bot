@@ -4,7 +4,7 @@
     "builder": "DOCKERFILE"
   },
   "deploy": {
-    "cronSchedule": "0 21 * * *",
+    "cronSchedule": "30 22 * * *",
     "restartPolicyType": "NEVER"
   }
 }

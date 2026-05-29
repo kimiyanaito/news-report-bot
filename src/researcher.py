@@ -35,7 +35,7 @@ _JSON_FENCE_RE = re.compile(r"```json\s*(.*?)\s*```", re.DOTALL)
 
 def _today_jst_str() -> str:
     tz = pytz.timezone(timezone_name())
-    return datetime.now(tz).strftime("%Y-%m-%d (%a)")
+    return datetime.now(tz).strftime("%Y-%m-%d %H:%M (%a)")
 
 
 def _format_prompt(template: str) -> str:
